@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
+import javax.swing.UIManager;
 
 /**
  *All GUI layout located in this class, which inherits from JFrame.
@@ -30,31 +31,31 @@ public class GuiWindowBuilderLayout extends JFrame {
 		btnResetButton.setForeground(Color.BLACK);
 		btnResetButton.setBackground(Color.WHITE);
 		btnResetButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnResetButton.setBounds(150, 150, 85, 21);
+		btnResetButton.setBounds(150, 150, 99, 21);
 		getContentPane().add(btnResetButton);
 		
 		JButton btnPlayWord = new JButton("Play Word");
 		btnPlayWord.setBackground(Color.WHITE);
 		btnPlayWord.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnPlayWord.setBounds(267, 150, 85, 21);
+		btnPlayWord.setBounds(267, 150, 99, 21);
 		getContentPane().add(btnPlayWord);
 		
 		textFieldTiles = new JTextField();
 		textFieldTiles.setEditable(false);
 		textFieldTiles.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textFieldTiles.setBounds(32, 36, 320, 19);
+		textFieldTiles.setBounds(32, 56, 334, 19);
 		getContentPane().add(textFieldTiles);
 		textFieldTiles.setColumns(10);
 		
 		textFieldAnswer = new JTextField();
 		textFieldAnswer.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textFieldAnswer.setColumns(10);
-		textFieldAnswer.setBounds(32, 108, 320, 19);
+		textFieldAnswer.setBounds(32, 108, 334, 19);
 		getContentPane().add(textFieldAnswer);
 		
 		JLabel lblTiles = new JLabel("Tiles");
 		lblTiles.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTiles.setBounds(32, 10, 45, 13);
+		lblTiles.setBounds(32, 33, 45, 13);
 		getContentPane().add(lblTiles);
 		
 		JLabel lblYourWord = new JLabel("Your Word");
@@ -71,14 +72,14 @@ public class GuiWindowBuilderLayout extends JFrame {
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textField.setColumns(10);
-		textField.setBounds(267, 190, 85, 19);
+		textField.setBounds(267, 190, 99, 19);
 		getContentPane().add(textField);
 		
 		JLabel lblMessage = new JLabel("");
-		lblMessage.setBackground(Color.WHITE);
-		lblMessage.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblMessage.setBackground(UIManager.getColor("Button.highlight"));
+		lblMessage.setHorizontalAlignment(SwingConstants.LEFT);
 		lblMessage.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblMessage.setBounds(32, 229, 320, 24);
+		lblMessage.setBounds(32, 229, 334, 24);
 		getContentPane().add(lblMessage);
 		
 		listLetters = new JList();

@@ -38,9 +38,9 @@ public class WordDictionary {
 		if (word == null) {
 			return false;
 		}
-		if (word.isBlank()) {
-			return false;
-		}
+		//if (word.isBlank()) {
+		//	return false;
+		//}
 		
 		AnnotatedText text = new AnnotatedTextBuilder().addText(word).build();
 		try {
