@@ -1,5 +1,6 @@
 package edu.westga.cs.babble;
 
+import edu.westga.cs.babble.model.EmptyTileBagException;
 import edu.westga.cs.babble.views.Gui;
 import edu.westga.cs.babble.views.GuiWindowBuilderLayout;
 
@@ -16,9 +17,9 @@ public class Babble {
      * Start point for the application.
      * 
      * @param args not used
+     * @throws EmptyTileBagException 
      */
-    public static void main(String[] args) {
-    	//GuiWindowBuilderLayout gui = new GuiWindowBuilderLayout();
+    public static void main(String[] args) throws EmptyTileBagException {
     	Gui gui = new Gui();
 		gui.run();
     }

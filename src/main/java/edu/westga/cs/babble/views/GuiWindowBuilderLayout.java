@@ -9,6 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
 import javax.swing.UIManager;
+import javax.swing.JPanel;
+import javax.swing.AbstractListModel;
+import javax.swing.ListSelectionModel;
+
 
 /**
  *All GUI layout located in this class, which inherits from JFrame.
@@ -19,10 +23,14 @@ import javax.swing.UIManager;
  *
  */
 public class GuiWindowBuilderLayout extends JFrame {
-	protected JTextField textFieldTiles;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected JTextField textFieldAnswer;
 	protected JTextField textField;
-	protected JList listLetters;
+	protected JList tileList;
+	protected JPanel panel;
 	public GuiWindowBuilderLayout() {
 		getContentPane().setEnabled(false);
 		getContentPane().setLayout(null);
@@ -40,13 +48,6 @@ public class GuiWindowBuilderLayout extends JFrame {
 		btnPlayWord.setBounds(267, 150, 99, 21);
 		getContentPane().add(btnPlayWord);
 		
-		textFieldTiles = new JTextField();
-		textFieldTiles.setEditable(false);
-		textFieldTiles.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textFieldTiles.setBounds(32, 56, 334, 19);
-		getContentPane().add(textFieldTiles);
-		textFieldTiles.setColumns(10);
-		
 		textFieldAnswer = new JTextField();
 		textFieldAnswer.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textFieldAnswer.setColumns(10);
@@ -55,7 +56,7 @@ public class GuiWindowBuilderLayout extends JFrame {
 		
 		JLabel lblTiles = new JLabel("Tiles");
 		lblTiles.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTiles.setBounds(32, 33, 45, 13);
+		lblTiles.setBounds(32, 21, 45, 13);
 		getContentPane().add(lblTiles);
 		
 		JLabel lblYourWord = new JLabel("Your Word");
@@ -82,10 +83,17 @@ public class GuiWindowBuilderLayout extends JFrame {
 		lblMessage.setBounds(32, 229, 334, 24);
 		getContentPane().add(lblMessage);
 		
-		listLetters = new JList();
-		listLetters.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-		listLetters.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		listLetters.setBounds(32, 53, 320, -13);
-		getContentPane().add(listLetters);
+		tileList = new JList<>();
+		tileList.setBackground(Color.YELLOW);
+		tileList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tileList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+		tileList.setSelectedIndex(0);
+		tileList.setBounds(31, 44, 107, 24);
+		getContentPane().add(tileList);
+		
+		panel = new JPanel();
+		panel.setBackground(Color.GRAY);
+		panel.setBounds(166, 43, 192, 55);
+		getContentPane().add(panel);
 	}
 }
