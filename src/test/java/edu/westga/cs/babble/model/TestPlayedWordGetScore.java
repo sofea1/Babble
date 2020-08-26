@@ -10,14 +10,17 @@ import org.junit.jupiter.api.Test;
 
 /**
  * This class tests the getScore method of the PlayedWord class
+ * 
  * @author Sofiya Anikina
  * @version August 25, 2020
  *
  */
 class TestPlayedWordGetScore {
 	private PlayedWord testPlayedWord;
+
 	/**
 	 * Sets up the instance variable for each test method
+	 * 
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
@@ -25,7 +28,6 @@ class TestPlayedWordGetScore {
 		this.testPlayedWord = new PlayedWord();
 	}
 
-	
 	/**
 	 * This method tests that an empty word has 0 as its score
 	 */
@@ -34,31 +36,31 @@ class TestPlayedWordGetScore {
 		assertEquals(0, this.testPlayedWord.getScore());
 		assertTrue(this.testPlayedWord.getScore() == 0);
 	}
-	
+
 	/**
-	 * This method tests a one-tile word 
+	 * This method tests a one-tile word
 	 */
 	@Test
 	public void scoreAOneTileWord() {
-	
+
 		Tile testTile = new Tile('A');
 		this.testPlayedWord.append(testTile);
 
 		assertEquals(1, this.testPlayedWord.getScore());
-		assertTrue(this.testPlayedWord.getScore()==1);
+		assertTrue(this.testPlayedWord.getScore() == 1);
 	}
-	
+
 	/**
 	 * This method tests a word with differing tiles
 	 */
 	@Test
 	public void scoreAWordWithMultipleDifferingTiles() {
-		
-		this.testPlayedWord.append(new Tile('S')); //1
-		this.testPlayedWord.append(new Tile('K')); //5
-		this.testPlayedWord.append(new Tile('Q')); //10
+
+		this.testPlayedWord.append(new Tile('S')); // 1
+		this.testPlayedWord.append(new Tile('K')); // 5
+		this.testPlayedWord.append(new Tile('Q')); // 10
 		assertEquals(16, this.testPlayedWord.getScore());
-		assertTrue(this.testPlayedWord.getScore()== 16);
+		assertTrue(this.testPlayedWord.getScore() == 16);
 	}
 
 	/**
@@ -66,14 +68,14 @@ class TestPlayedWordGetScore {
 	 */
 	@Test
 	public void scoreAWordContainingDuplicateTiles() {
-		
-		this.testPlayedWord.append(new Tile('H')); //4
-		this.testPlayedWord.append(new Tile('E')); //1
-		this.testPlayedWord.append(new Tile('L')); //1
-		this.testPlayedWord.append(new Tile('L')); //1
-		this.testPlayedWord.append(new Tile('O')); //1
-		
+
+		this.testPlayedWord.append(new Tile('H')); // 4
+		this.testPlayedWord.append(new Tile('E')); // 1
+		this.testPlayedWord.append(new Tile('L')); // 1
+		this.testPlayedWord.append(new Tile('L')); // 1
+		this.testPlayedWord.append(new Tile('O')); // 1
+
 		assertEquals(8, this.testPlayedWord.getScore());
-		assertTrue(this.testPlayedWord.getScore()== 8);
+		assertTrue(this.testPlayedWord.getScore() == 8);
 	}
 }
