@@ -64,4 +64,5 @@ public class Tile {
 			return 10;
 		}
 	}
+	
 }
