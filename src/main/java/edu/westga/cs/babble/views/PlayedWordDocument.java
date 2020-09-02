@@ -156,6 +156,8 @@ public class PlayedWordDocument extends PlayedWord implements Document {
 			if (str == null) {
 				return;
 			}
+			// Set the text of this document to uppercase
+	        super.insertString(offs, str.toUpperCase(), a);
 		}
 	}
 
