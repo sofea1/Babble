@@ -5,7 +5,6 @@ import java.util.List;
 import edu.westga.cs.babble.model.EmptyTileBagException;
 import edu.westga.cs.babble.model.Tile;
 import edu.westga.cs.babble.model.TileNotInGroupException;
-import edu.westga.cs.babble.views.GuiWindowBuilderLayout;
 import edu.westga.cs.babble.views.MessageDocument;
 import edu.westga.cs.babble.views.PlayedWordDocument;
 import edu.westga.cs.babble.views.TileListModel;
@@ -23,7 +22,6 @@ public class GuiController {
 
 	private WordDictionary dictionary;
 	private int score;
-	private GuiWindowBuilderLayout builder;
 	private TileListModel tileModel;
 	private PlayedWordDocument document;
 	private MessageDocument messageDocument;
@@ -38,7 +36,6 @@ public class GuiController {
 		this.dictionary = new WordDictionary();
 
 		this.document = new PlayedWordDocument(7);
-		this.builder = new GuiWindowBuilderLayout();
 	}
 
 	/**
