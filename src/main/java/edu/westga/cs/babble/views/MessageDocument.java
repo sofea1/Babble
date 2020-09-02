@@ -12,9 +12,7 @@ import javax.swing.text.PlainDocument;
  * @version August 31, 2020
  */
 public class MessageDocument extends PlainDocument {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
