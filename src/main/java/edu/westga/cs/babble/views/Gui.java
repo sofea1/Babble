@@ -76,27 +76,24 @@ public class Gui extends GuiWindowBuilderLayout {
 
 			this.documentD = new PlayedWordDocument(90);
 			this.document = this.documentD.new PlayedWordPlainDocument();
-			
+
 			this.gui.textFieldAnswer.setDocument(this.document);
 			this.gui.textFieldAnswer.setToolTipText("Displays the selected letters");
 			this.gui.textFieldAnswer.setText(this.documentD.getHand());
 
 			this.gui.getAccessibleContext().getAccessibleStateSet();
-			
+
 			this.tileJList.addListSelectionListener(new ListSelectionListener() {
 				@Override
 				public void valueChanged(ListSelectionEvent lse) {
 					if (!lse.getValueIsAdjusting()) {
 						try {
 							tileSelected();
-							System.out.println("It works!");
-							System.out.println("Test Doc Get Hand 2" + documentD.getHand());
 							gui.textFieldAnswer.setText(documentD.getHand());
 							TileCellRenderer renderer = new TileCellRenderer();
 							tileJList.setCellRenderer(renderer);
-							
+
 						} catch (TileNotInGroupException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 
@@ -126,14 +123,12 @@ public class Gui extends GuiWindowBuilderLayout {
 
 	ActionListener resetListener = new ActionListener() {
 		public void actionPerformed(ActionEvent ae) {
-			System.out.println(ae.getActionCommand());
 			reset();
 		}
 	};
 
 	ActionListener playButtonListener = new ActionListener() {
 		public void actionPerformed(ActionEvent ae) {
-			System.out.println(ae.getActionCommand());
 			try {
 				try {
 					setButtonToPlayWord();
@@ -145,7 +140,6 @@ public class Gui extends GuiWindowBuilderLayout {
 			}
 		}
 	};
-
 
 	/**
 	 * Moves a tile from the top rack to the played word area
@@ -169,7 +163,6 @@ public class Gui extends GuiWindowBuilderLayout {
 		while (this.documentD.getTiles().size() > 0) {
 			Tile tile = this.documentD.getTiles().get(0);
 			this.game.moveTile(this.documentD.getTiles(), this.model.getTiles(), tile);
-			System.out.println("DOCUMENT size after reset " + this.documentD.getTiles().size());
 			TileCellRenderer renderer = new TileCellRenderer();
 			this.tileJList.setCellRenderer(renderer);
 			this.gui.textFieldAnswer.setText("");
@@ -183,7 +176,6 @@ public class Gui extends GuiWindowBuilderLayout {
 	private void setButtonToPlayWord() throws EmptyTileBagException, BadLocationException {
 		if (this.game.getDictionary().isValidWord(this.documentD.getHand())) {
 
-			System.out.println("DOCUMENT check word get hand " + this.documentD.getHand());
 			int wordScore = this.documentD.getScore();
 			this.game.addWordScore(wordScore);
 			this.gui.textFieldMessage.setText("Played '" + this.documentD.getHand() + "' for " + wordScore + " points");
