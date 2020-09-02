@@ -2,7 +2,6 @@ package edu.westga.cs.babble;
 
 import edu.westga.cs.babble.model.EmptyTileBagException;
 import edu.westga.cs.babble.views.Gui;
-import edu.westga.cs.babble.views.GuiWindowBuilderLayout;
 
 /**
  * Main class for the Babble project
@@ -11,8 +10,6 @@ import edu.westga.cs.babble.views.GuiWindowBuilderLayout;
  * @version cs6241
  */
 public class Babble {
-
-	
     /**
      * Start point for the application.
      * 
