@@ -67,7 +67,9 @@ public abstract class TileGroup {
 		return s;
 	}
 
-	//custom method
+	/**
+	 * Custom getter.
+	 */
 	public List<Tile> getTiles() {
 		return tiles;
 	}

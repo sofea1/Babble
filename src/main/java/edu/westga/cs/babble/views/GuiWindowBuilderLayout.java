@@ -7,11 +7,8 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JList;
-import javax.swing.UIManager;
 import javax.swing.JPanel;
-import javax.swing.AbstractListModel;
-import javax.swing.ListSelectionModel;
+
 
 
 /**
@@ -27,73 +24,66 @@ public class GuiWindowBuilderLayout extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	protected JTextField textFieldAnswer;
-	protected JTextField textField;
-	protected JList tileList;
 	protected JPanel panel;
+	protected JButton btnReset;
+	protected JButton btnPlayWord;
+	protected JTextField textFieldScore;
+	protected JTextField textFieldMessage;
+	protected JTextField textFieldAnswer;
 	public GuiWindowBuilderLayout() {
+		getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 12));
 		getContentPane().setEnabled(false);
 		getContentPane().setLayout(null);
 		
-		JButton btnResetButton = new JButton("Reset");
-		btnResetButton.setForeground(Color.BLACK);
-		btnResetButton.setBackground(Color.WHITE);
-		btnResetButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnResetButton.setBounds(150, 150, 99, 21);
-		getContentPane().add(btnResetButton);
-		
-		JButton btnPlayWord = new JButton("Play Word");
-		btnPlayWord.setBackground(Color.WHITE);
-		btnPlayWord.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnPlayWord.setBounds(267, 150, 99, 21);
-		getContentPane().add(btnPlayWord);
-		
-		textFieldAnswer = new JTextField();
-		textFieldAnswer.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textFieldAnswer.setColumns(10);
-		textFieldAnswer.setBounds(32, 108, 334, 19);
-		getContentPane().add(textFieldAnswer);
-		
 		JLabel lblTiles = new JLabel("Tiles");
 		lblTiles.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTiles.setBounds(32, 21, 45, 13);
+		lblTiles.setBounds(26, 20, 45, 13);
 		getContentPane().add(lblTiles);
 		
 		JLabel lblYourWord = new JLabel("Your Word");
 		lblYourWord.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblYourWord.setBounds(32, 85, 70, 13);
+		lblYourWord.setBounds(30, 89, 70, 13);
 		getContentPane().add(lblYourWord);
 		
 		JLabel lblScore = new JLabel("Score:");
 		lblScore.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblScore.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblScore.setBounds(187, 193, 70, 13);
+		lblScore.setBounds(54, 208, 70, 13);
 		getContentPane().add(lblScore);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textField.setColumns(10);
-		textField.setBounds(267, 190, 99, 19);
-		getContentPane().add(textField);
-		
-		JLabel lblMessage = new JLabel("");
-		lblMessage.setBackground(UIManager.getColor("Button.highlight"));
-		lblMessage.setHorizontalAlignment(SwingConstants.LEFT);
-		lblMessage.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblMessage.setBounds(32, 229, 334, 24);
-		getContentPane().add(lblMessage);
-		
-		tileList = new JList<>();
-		tileList.setBackground(Color.YELLOW);
-		tileList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		tileList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-		tileList.setSelectedIndex(0);
-		tileList.setBounds(31, 44, 107, 24);
-		getContentPane().add(tileList);
-		
 		panel = new JPanel();
-		panel.setBackground(Color.GRAY);
-		panel.setBounds(166, 43, 192, 55);
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(20, 43, 202, 29);
 		getContentPane().add(panel);
+		
+		btnReset = new JButton("Reset");
+		btnReset.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnReset.setBounds(26, 163, 91, 24);
+		getContentPane().add(btnReset);
+		
+		btnPlayWord = new JButton("Play Word");
+		btnPlayWord.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnPlayWord.setBounds(131, 163, 91, 24);
+		getContentPane().add(btnPlayWord);
+		
+		textFieldScore = new JTextField();
+		textFieldScore.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		textFieldScore.setBounds(131, 205, 91, 19);
+		getContentPane().add(textFieldScore);
+		textFieldScore.setColumns(4);
+		
+		textFieldMessage = new JTextField();
+		textFieldMessage.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		textFieldMessage.setBounds(20, 234, 202, 19);
+		getContentPane().add(textFieldMessage);
+		textFieldMessage.setColumns(3);
+		
+		textFieldAnswer = new JTextField();
+		textFieldAnswer.setBackground(Color.WHITE);
+		textFieldAnswer.setEditable(false);
+		textFieldAnswer.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		textFieldAnswer.setBounds(26, 112, 196, 24);
+		getContentPane().add(textFieldAnswer);
+		textFieldAnswer.setColumns(10);
 	}
 }
