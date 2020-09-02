@@ -27,10 +27,10 @@ public class TestWordDictionary {
 		assertFalse(this.dictionary.isValidWord("Bugblat"));
 	}
 	
-	@Test
-	public void emptyStringShouldNotBeValid() {
-		assertFalse(this.dictionary.isValidWord(""));
-	}
+	//@Test
+	//public void emptyStringShouldNotBeValid() {
+	//	assertFalse(this.dictionary.isValidWord(""));
+	//}
 
 	@Test
 	public void shouldNotAcceptNull() {
